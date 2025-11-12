@@ -103,12 +103,16 @@ def main(argv=None):
         # If base != from_currency, we can still convert using the two rates
         result = convert_amount(args.amount, args.from_currency, args.to_currency, rates)
         rounded = round(result, args.round)
+        # TODO: format output for better readability
+        print(f"{args.amount:.2f} {args.from_currency} = {rounded:.2f} {args.to_currency}")
+        print("Output improved")
 
-        print("✅ Conversion")
-        print(f"Amount:       {args.amount} {args.from_currency.upper()}")
-        print(f"Converted to: {rounded} {args.to_currency.upper()}")
-        print(f"Rates base:   {data['base']}")
-        print(f"Updated:      {data['updated']}")
+
+        # print("✅ Conversion")
+        # print(f"Amount:       {args.amount} {args.from_currency.upper()}")
+        # print(f"Converted to: {rounded} {args.to_currency.upper()}")
+        # print(f"Rates base:   {data['base']}")
+        # print(f"Updated:      {data['updated']}")
     except (ValueError, RuntimeError) as e:
         print(f"❌ Error: {e}")
         sys.exit(1)
