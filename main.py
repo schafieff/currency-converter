@@ -106,6 +106,8 @@ def main(argv=None):
         # TODO: format output for better readability
         print(f"{args.amount:.2f} {args.from_currency} = {rounded:.2f} {args.to_currency}")
         print("Output improved")
+        print("=== Currency Converter v1.0 ===")  # temporary change for branch demo
+
 
 
         # print("✅ Conversion")
